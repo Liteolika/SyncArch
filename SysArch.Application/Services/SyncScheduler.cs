@@ -1,4 +1,6 @@
-﻿using SysArch.Core;
+﻿using MassTransit;
+using SysArch.Application.Messages;
+using SysArch.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +17,11 @@ namespace SysArch.Application.Services
         private AutoResetEvent _autoEvent = new AutoResetEvent(false);
         private ISyncSchedulerCalculator _scheduleCalculator;
         private DateTime _nextRun;
+        private readonly IServiceBus _bus;
 
-        public SyncScheduler()
+        public SyncScheduler(IServiceBus serviceBus)
         {
-
+            this._bus = serviceBus;
         }
 
         public void Start(ISyncSchedulerCalculator scheduleCalculator)
@@ -42,6 +45,8 @@ namespace SysArch.Application.Services
 
             if (DateTime.Now > _nextRun)
             {
+                _bus.Publish(new ExecuteUserSyncService());
+
                 Console.WriteLine("Executing schedule");
                 _nextRun = _scheduleCalculator.CalculateNextRun(lastrun: DateTime.Now);
             }
@@ -49,7 +54,6 @@ namespace SysArch.Application.Services
 
         }
 
-        
 
     }
 }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SysArch.Core
+namespace SysArch.Application.Services
 {
-    public interface ISyncSchedulerCalculator
+    public interface IFileSyncService
     {
-        DateTime CalculateNextRun(DateTime lastrun);
     }
 }

@@ -32,6 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Magnum, Version=2.1.3.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magnum.2.1.3\lib\NET40\Magnum.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MassTransit, Version=2.10.0.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.2.10.0\lib\net40\MassTransit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.3.1.5.154\lib\net40\StructureMap.dll</HintPath>
     </Reference>
@@ -49,9 +61,17 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="DependecyInjection\StructuremapBootstraper.cs" />
+    <Compile Include="Messages\ExecuteFileSyncService.cs" />
+    <Compile Include="Messages\ExecuteUserSyncService.cs" />
+    <Compile Include="Messages\ICommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IFileSyncService.cs" />
+    <Compile Include="Services\ISyncScheduler.cs" />
+    <Compile Include="Services\ISyncSchedulerCalculator.cs" />
+    <Compile Include="Services\IUserSyncService.cs" />
     <Compile Include="Services\SyncScheduler.cs" />
     <Compile Include="Services\SyncSchedulerCalculator.cs" />
+    <Compile Include="Services\UserSyncService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SysArch.Core\SysArch.Core.csproj">

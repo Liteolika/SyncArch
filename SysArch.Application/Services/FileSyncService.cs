@@ -8,24 +8,22 @@ using System.Threading.Tasks;
 
 namespace SysArch.Application.Services
 {
-    public class UserSyncService : ICommandHandler<ExecuteUserSyncService>
-        
+    public class FileSyncService : ICommandHandler<ExecuteFileSyncService>
     {
 
         private readonly IServiceBus _bus;
         public readonly Guid _id;
 
-        public UserSyncService(IServiceBus bus)
+        public FileSyncService(IServiceBus bus)
         {
             this._id = Guid.NewGuid();
             _bus = bus;
         }
 
-        public void Handle(ExecuteUserSyncService cmd)
+        public void Handle(ExecuteFileSyncService cmd)
         {
-            Console.WriteLine("Executing User Sync");
+            Console.WriteLine("Executing File Sync");
         }
 
-        
     }
 }

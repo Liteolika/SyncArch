@@ -60,15 +60,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="DependecyInjection\ServiceBusExtensions.cs" />
     <Compile Include="DependecyInjection\StructuremapBootstraper.cs" />
     <Compile Include="Messages\ExecuteFileSyncService.cs" />
     <Compile Include="Messages\ExecuteUserSyncService.cs" />
     <Compile Include="Messages\ICommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FileSyncService.cs" />
     <Compile Include="Services\IFileSyncService.cs" />
     <Compile Include="Services\ISyncScheduler.cs" />
     <Compile Include="Services\ISyncSchedulerCalculator.cs" />
-    <Compile Include="Services\IUserSyncService.cs" />
     <Compile Include="Services\SyncScheduler.cs" />
     <Compile Include="Services\SyncSchedulerCalculator.cs" />
     <Compile Include="Services\UserSyncService.cs" />

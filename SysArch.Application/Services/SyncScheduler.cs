@@ -24,12 +24,23 @@ namespace SysArch.Application.Services
             this._bus = serviceBus;
         }
 
+
         public void Start(ISyncSchedulerCalculator scheduleCalculator)
         {
             _scheduleCalculator = scheduleCalculator;
-
+            _bus.Publish(new ExecuteUserSyncService());
             TimerCallback tcb = this.TimerExecutor;
             _executionTimer = new Timer(tcb, _autoEvent, 1000, 1000);
+            //_executionTimer = new Timer(
+            //    tcb, 
+            //    new Action<object>(x => _bus.Publish(x)),
+            //    1000, 
+            //    1000);
+        }
+
+        private void PublishMessage(object message)
+        {
+            _bus.Publish(message);
         }
 
         public void Stop()
@@ -41,14 +52,13 @@ namespace SysArch.Application.Services
         private void TimerExecutor(Object stateInfo)
         {
             AutoResetEvent autoEvent = (AutoResetEvent)stateInfo;
-            autoEvent.Set();
 
             if (DateTime.Now > _nextRun)
             {
                 _bus.Publish(new ExecuteUserSyncService());
-
-                Console.WriteLine("Executing schedule");
+                _bus.Publish(new ExecuteFileSyncService());
                 _nextRun = _scheduleCalculator.CalculateNextRun(lastrun: DateTime.Now);
+                autoEvent.Set();
             }
             
 

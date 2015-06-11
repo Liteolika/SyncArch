@@ -23,7 +23,7 @@ namespace SysArch.Application.Services
 
         public void Handle(ExecuteUserSyncService cmd)
         {
-            Console.WriteLine("Executing User Sync");
+            _bus.Publish(new UserSyncServiceExecuted());
         }
 
         

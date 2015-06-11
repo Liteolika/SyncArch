@@ -12,7 +12,7 @@ namespace SysArch.Application.Services
 
         public DateTime CalculateNextRun(DateTime lastrun)
         {
-            return lastrun.AddSeconds(2);
+            return lastrun.AddSeconds(10);
         }
     }
 }

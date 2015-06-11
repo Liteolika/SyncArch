@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SysArch.Application.Messages
 {
-    public class ExecuteUserSyncService : Command
+    public abstract class Event
     {
+        public Guid EventId { get; private set; }
+
+        public Event()
+        {
+            this.EventId = Guid.NewGuid();
+        }
     }
 }

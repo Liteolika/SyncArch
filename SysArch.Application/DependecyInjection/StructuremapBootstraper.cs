@@ -24,7 +24,7 @@ namespace SysArch.Application.DependecyInjection
                 cfg.For<IService>().Use<App>();
                 //cfg.For<ISyncScheduler>().Use<Services.SyncScheduler>();
                 //cfg.For<ISyncSchedulerCalculator>().Use<Services.SyncSchedulerCalculator>();
-                cfg.For<IServiceBus>().Use("ServiceBus", CreateServiceBus);
+                cfg.For<IServiceBus>().Singleton().Use("ServiceBus", CreateServiceBus);
 
                 //cfg.For<UserSyncService>().Use<UserSyncService>();
 

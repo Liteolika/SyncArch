@@ -22,7 +22,7 @@ namespace SysArch.Application.Services
 
         public void Handle(ExecuteFileSyncService cmd)
         {
-            Console.WriteLine("Executing File Sync");
+            _bus.Publish(new FileSyncServiceExecuted());
         }
 
     }

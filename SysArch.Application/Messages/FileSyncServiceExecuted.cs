@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SysArch.Application.Messages
 {
-    public class ExecuteUserSyncService : Command
+    public class FileSyncServiceExecuted : Event
     {
     }
 }

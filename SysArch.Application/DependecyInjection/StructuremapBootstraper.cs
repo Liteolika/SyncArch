@@ -22,11 +22,7 @@ namespace SysArch.Application.DependecyInjection
             container.Configure(cfg =>
             {
                 cfg.For<IService>().Use<App>();
-                //cfg.For<ISyncScheduler>().Use<Services.SyncScheduler>();
-                //cfg.For<ISyncSchedulerCalculator>().Use<Services.SyncSchedulerCalculator>();
                 cfg.For<IServiceBus>().Singleton().Use("ServiceBus", CreateServiceBus);
-
-                //cfg.For<UserSyncService>().Use<UserSyncService>();
 
                 cfg.Scan(s =>
                 {

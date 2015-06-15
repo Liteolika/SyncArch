@@ -24,8 +24,6 @@ namespace SysArch.Application
 
         public void Start()
         {
-            //Console.WriteLine("Service Start Command");
-
             ISyncSchedulerCalculator calculator = new SyncSchedulerCalculator();
 
             _bus.SubscribeHandler<UserSyncServiceExecuted>(x => {
@@ -38,12 +36,10 @@ namespace SysArch.Application
             });
 
             _scheduler.Start(calculator);
-
         }
 
         public void Stop()
         {
-            //Console.WriteLine("Service Stop Command");
             _scheduler.Stop();
         }
     }

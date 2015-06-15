@@ -62,12 +62,9 @@
     <Compile Include="App.cs" />
     <Compile Include="DependecyInjection\ServiceBusExtensions.cs" />
     <Compile Include="DependecyInjection\StructuremapBootstraper.cs" />
-    <Compile Include="Messages\Command.cs" />
-    <Compile Include="Messages\Event.cs" />
     <Compile Include="Messages\ExecuteFileSyncService.cs" />
     <Compile Include="Messages\ExecuteUserSyncService.cs" />
     <Compile Include="Messages\FileSyncServiceExecuted.cs" />
-    <Compile Include="Messages\ICommand.cs" />
     <Compile Include="Messages\UserSyncServiceExecuted.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FileSyncService.cs" />
@@ -83,9 +80,20 @@
       <Project>{8231826b-c2b7-4d1a-b223-056d1cfab3e4}</Project>
       <Name>SysArch.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SysArch.Domain\SysArch.Domain.csproj">
+      <Project>{c7b18102-469e-4435-bc88-062ea7990306}</Project>
+      <Name>SysArch.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SysArch.ViewBuilders\SysArch.ViewBuilders.csproj">
+      <Project>{1cde9880-c235-4631-90b6-1a561a0c3717}</Project>
+      <Name>SysArch.ViewBuilders</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dispatchers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

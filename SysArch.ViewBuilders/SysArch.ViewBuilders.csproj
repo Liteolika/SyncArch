@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8231826B-C2B7-4D1A-B223-056D1CFAB3E4}</ProjectGuid>
+    <ProjectGuid>{1CDE9880-C235-4631-90B6-1A561A0C3717}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SysArch.Core</RootNamespace>
-    <AssemblyName>SysArch.Core</AssemblyName>
+    <RootNamespace>SysArch.ViewBuilders</RootNamespace>
+    <AssemblyName>SysArch.ViewBuilders</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,21 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandHeaderExtensions.cs" />
-    <Compile Include="EventSourcing\AggregateRoot.cs" />
-    <Compile Include="EventSourcing\AggregateRootExtensions.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="Event.cs" />
-    <Compile Include="EventSourcing\EventContext.cs" />
-    <Compile Include="EventSourcing\IAggregateRepository.cs" />
-    <Compile Include="EventSourcing\IEventDispatcher.cs" />
-    <Compile Include="EventSourcing\InMemoryEventStoreRepository.cs" />
-    <Compile Include="ICommandHandler.cs" />
-    <Compile Include="IService.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Messaging\" />
+    <ProjectReference Include="..\SysArch.Core\SysArch.Core.csproj">
+      <Project>{8231826b-c2b7-4d1a-b223-056d1cfab3e4}</Project>
+      <Name>SysArch.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SysArch.Domain\SysArch.Domain.csproj">
+      <Project>{c7b18102-469e-4435-bc88-062ea7990306}</Project>
+      <Name>SysArch.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SysArch.Views\SysArch.Views.csproj">
+      <Project>{fdb21bcc-3acd-40da-a92c-491b19b206f8}</Project>
+      <Name>SysArch.Views</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

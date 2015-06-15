@@ -4,11 +4,13 @@ using StructureMap.Graph;
 using SysArch.Application.Messages;
 using SysArch.Application.Services;
 using SysArch.Core;
+using SysArch.Core.EventSourcing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SysArch.ViewBuilders;
 
 namespace SysArch.Application.DependecyInjection
 {
@@ -31,6 +33,16 @@ namespace SysArch.Application.DependecyInjection
                     s.AssembliesFromApplicationBaseDirectory();
                     s.ConnectImplementationsToTypesClosing(typeof(ICommandHandler<>));
                 });
+
+                cfg.For<IAggregateRepository<Guid>>()
+                    .Singleton()
+                    .Use<InMemoryEventStoreRepository>()
+                    .OnCreation("Registering viewbuilders", (ctx, repo) =>
+                    {
+                        //var a = ctx.GetInstance<ViewBuilderEventDispatcher>();
+                        //repo.RegisterDispatcher(ctx.GetInstance<ViewBuilderEventDispatcher>());
+                    });
+
 
             });
 

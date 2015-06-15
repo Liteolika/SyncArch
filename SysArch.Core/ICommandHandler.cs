@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SysArch.Application.Messages
+namespace SysArch.Core
 {
     public interface ICommandHandler
     { }

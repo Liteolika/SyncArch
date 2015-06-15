@@ -1,5 +1,6 @@
 ﻿using MassTransit;
 using SysArch.Application.Messages;
+using SysArch.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;

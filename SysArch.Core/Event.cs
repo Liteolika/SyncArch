@@ -8,11 +8,11 @@ namespace SysArch.Core
 {
     public abstract class Event
     {
-        //public Guid EventId { get; private set; }
+        public Guid EventId { get; private set; }
 
-        //public Event()
-        //{
-        //    this.EventId = Guid.NewGuid();
-        //}
+        public Event()
+        {
+            this.EventId = Guid.NewGuid();
+        }
     }
 }

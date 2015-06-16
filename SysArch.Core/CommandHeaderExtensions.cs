@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace SysArch.Core
 {
-    public static class CommandHeaderExtensions
-    {
-        public static Action<IDictionary<string, object>> ApplyCommandHeaders(this Command cmd)
-        {
-            return headers =>
-            {
-                headers.Add("CommandId", cmd.CommandId);
-            };
-        }
-    }
+    //public static class CommandHeaderExtensions
+    //{
+    //    public static Action<IDictionary<string, object>> ApplyCommandHeaders(this Command cmd)
+    //    {
+    //        return headers =>
+    //        {
+    //            headers.Add("CommandId", cmd.CommandId);
+    //        };
+    //    }
+    //}
 
 }

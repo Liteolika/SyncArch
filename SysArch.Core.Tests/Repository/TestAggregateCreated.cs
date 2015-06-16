@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SysArch.ViewBuilders
+namespace SysArch.Core.Tests.Repository
 {
-    class Class1
+    public class TestAggregateCreated
     {
+        public Guid TestId { get; set; }
     }
 }

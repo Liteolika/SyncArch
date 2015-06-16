@@ -27,16 +27,17 @@ namespace SysArch.Application
         {
             ISyncSchedulerCalculator calculator = new SyncSchedulerCalculator();
 
-            //_bus.SubscribeHandler<UserSyncServiceExecuted>(x => {
-            //    Console.WriteLine("UserSyncServiceExecuted: {0}", x.EventId);
-            //});
+            _bus.SubscribeHandler<UserSyncServiceExecuted>(x =>
+            {
+                Console.WriteLine("UserSyncServiceExecuted: {0}", x.EventId);
+            });
 
-            //_bus.SubscribeHandler<FileSyncServiceExecuted>(x =>
-            //{
-            //    Console.WriteLine("FileSyncServiceExecuted: {0}", x.EventId);
-            //});
+            _bus.SubscribeHandler<FileSyncServiceExecuted>(x =>
+            {
+                Console.WriteLine("FileSyncServiceExecuted: {0}", x.EventId);
+            });
 
-            //_scheduler.Start(calculator);
+            _scheduler.Start(calculator);
 
             _bus.Publish(
                 new SysArch.Domain.PortalUserContext.Commands.CreatePortalUser() { 

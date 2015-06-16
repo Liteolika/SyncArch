@@ -26,7 +26,8 @@ namespace SysArch.Domain.PortalUserContext.CommandHandlers
             if (portalUser != null)
                 throw new Exception("User already created");
             portalUser = new PortalUser(cmd.UserId, cmd.UserName, cmd.EmailAddress);
-            _repository.Store(cmd.UserId, portalUser, cmd.ApplyCommandHeaders());
+            //_repository.Store(cmd.UserId, portalUser, cmd.ApplyCommandHeaders());
+            _repository.Store(cmd.UserId, portalUser);
         }
     }
 

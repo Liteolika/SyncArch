@@ -27,7 +27,8 @@ namespace SysArch.Domain.PortalUserContext.CommandHandlers
 
             portalUser.SetEmailAddress(cmd.EmailAddress);
             portalUser.SetUserName(cmd.UserName);
-            _repository.Store(cmd.UserId, portalUser, cmd.ApplyCommandHeaders());
+            //_repository.Store(cmd.UserId, portalUser, cmd.ApplyCommandHeaders());
+            _repository.Store(cmd.UserId, portalUser);
         }
     }
 }

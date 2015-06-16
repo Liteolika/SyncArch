@@ -13,6 +13,7 @@ namespace SysArch.Core.EventSourcing
 
         private static readonly ConcurrentDictionary<Type, Func<IEnumerable<object>, object>> Builders =
             new ConcurrentDictionary<Type, Func<IEnumerable<object>, object>>();
+
         private static readonly ConcurrentDictionary<Type, Dictionary<Type, Action<object, object>>> Handlers =
             new ConcurrentDictionary<Type, Dictionary<Type, Action<object, object>>>();
 
@@ -29,6 +30,7 @@ namespace SysArch.Core.EventSourcing
             {
                 throw new InvalidOperationException("Aggregate must have constructor with no parameters");
             }
+
             Builders[t] = (evts) =>
             {
                 var agg = (AggregateRoot)ctor.Invoke(new object[0]);
@@ -48,7 +50,10 @@ namespace SysArch.Core.EventSourcing
             foreach (var am in applyMethods)
             {
                 var applyMethod = am;
-                tmp.Add(applyMethod.GetParameters().First().ParameterType, (agg, e) => applyMethod.Invoke(agg, new object[] { e }));
+                tmp.Add(applyMethod.GetParameters()
+                    .First()
+                    .ParameterType, (agg, e) => 
+                        applyMethod.Invoke(agg, new object[] { e }));
             }
             Handlers[type] = tmp;
         }

@@ -18,9 +18,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysArch.WinService", "SysAr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysArch.Domain", "SysArch.Domain\SysArch.Domain.csproj", "{C7B18102-469E-4435-BC88-062EA7990306}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysArch.ViewBuilders", "SysArch.ViewBuilders\SysArch.ViewBuilders.csproj", "{1CDE9880-C235-4631-90B6-1A561A0C3717}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysArch.Views", "SysArch.Views\SysArch.Views.csproj", "{FDB21BCC-3ACD-40DA-A92C-491B19B206F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysArch.Core.Tests", "SysArch.Core.Tests\SysArch.Core.Tests.csproj", "{FFC75BF5-77FE-4F33-AA2F-7DDFD7A7B5B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysArch.Domain.Tests", "SysArch.Domain.Tests\SysArch.Domain.Tests.csproj", "{BCF32959-E3AC-4B95-BCA8-0BB9016F4CE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,14 +46,18 @@ Global
 		{C7B18102-469E-4435-BC88-062EA7990306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7B18102-469E-4435-BC88-062EA7990306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7B18102-469E-4435-BC88-062EA7990306}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CDE9880-C235-4631-90B6-1A561A0C3717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CDE9880-C235-4631-90B6-1A561A0C3717}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CDE9880-C235-4631-90B6-1A561A0C3717}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CDE9880-C235-4631-90B6-1A561A0C3717}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FDB21BCC-3ACD-40DA-A92C-491B19B206F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FDB21BCC-3ACD-40DA-A92C-491B19B206F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDB21BCC-3ACD-40DA-A92C-491B19B206F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDB21BCC-3ACD-40DA-A92C-491B19B206F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC75BF5-77FE-4F33-AA2F-7DDFD7A7B5B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC75BF5-77FE-4F33-AA2F-7DDFD7A7B5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC75BF5-77FE-4F33-AA2F-7DDFD7A7B5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC75BF5-77FE-4F33-AA2F-7DDFD7A7B5B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF32959-E3AC-4B95-BCA8-0BB9016F4CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF32959-E3AC-4B95-BCA8-0BB9016F4CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF32959-E3AC-4B95-BCA8-0BB9016F4CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF32959-E3AC-4B95-BCA8-0BB9016F4CE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

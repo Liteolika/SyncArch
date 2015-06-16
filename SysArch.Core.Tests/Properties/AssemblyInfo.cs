@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SysArch.ViewBuilders")]
+[assembly: AssemblyTitle("SysArch.Core.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SysArch.ViewBuilders")]
+[assembly: AssemblyProduct("SysArch.Core.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7ec487e5-f08e-4f47-8408-8cb6ba2c6e99")]
+[assembly: Guid("e4d540fe-b3ed-4061-b1df-193823ace5fb")]
 
 // Version information for an assembly consists of the following four values:
 //
